@@ -121,9 +121,51 @@ playerstat:
 and then we ```POST``` the result statistic by this:
 
 ```JSON
-
+{
+    "player": "4028191177a028980177a02b95de0000",
+    "result": "40281911779a6f6501779a7a09810010",
+    "goal": 1,
+    "assist": 1,
+    "yellowCard": 1,
+    "redCard": 0
+}
 ```
+and the player statistic will be like this:
 
+```JSON
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "list": [
+            {
+                "id": "4028191177a028980177a02b961a0001",
+                "player": {
+                    "id": "4028191177a028980177a02b95de0000",
+                    "name": "Timo Werner",
+                    "number": 11,
+                    "playerPosition": {
+                        "id": "40281911779fd31901779ff676780005",
+                        "name": "forward"
+                    },
+                    "team": {
+                        "id": "40281911779a6f6501779a7073fa0000",
+                        "name": "Chelsea FC"
+                    }
+                },
+                "assist": 1,
+                "goal": 1,
+                "redCard": 0,
+                "yellowCard": 1
+            }
+        ],
+        "page": 0,
+        "size": 50,
+        "total": 1
+    },
+    "timestamp": "2021-02-14T18:16:52.3784834"
+}
+```
 
 ```-``` This also applies when adding a new api team, teamstat will be automatically created, and when adding a result, 
 the teamstat will also change according to the added results.
@@ -178,6 +220,7 @@ result:
 ```
 
 the team statistic before we ```POST``` the result API:
+
 ```JSON
 {
     "code": 200,
@@ -247,43 +290,6 @@ and then we ```POST`` the result api:
     "assist": 1,
     "yellowCard": 1,
     "redCard": 0
-}
-```
-
-and the player statistic will be like this:
-
-```JSON
-{
-    "code": 200,
-    "message": "success",
-    "data": {
-        "list": [
-            {
-                "id": "4028191177a028980177a02b961a0001",
-                "player": {
-                    "id": "4028191177a028980177a02b95de0000",
-                    "name": "Timo Werner",
-                    "number": 11,
-                    "playerPosition": {
-                        "id": "40281911779fd31901779ff676780005",
-                        "name": "forward"
-                    },
-                    "team": {
-                        "id": "40281911779a6f6501779a7073fa0000",
-                        "name": "Chelsea FC"
-                    }
-                },
-                "assist": 1,
-                "goal": 1,
-                "redCard": 0,
-                "yellowCard": 1
-            }
-        ],
-        "page": 0,
-        "size": 50,
-        "total": 1
-    },
-    "timestamp": "2021-02-14T18:16:52.3784834"
 }
 ```
 
